@@ -2,16 +2,13 @@
 
 
 var express = require('express');
+var todos = require('../../mock/todos.json')
 var router = express.Router();
 
 
 router.get('/todos', function(req, res) {
-    // here the send method sends a string to be rendered as text/html on response
-    // res.send('hello! here go the todos');
-
-    // here we tell our api to send json objects ( both are equivalent )
-    // res.send({todos:[]});
-    res.json({todos:[]});
+    // here we tell our api to send mock data we required
+    res.json({todos:todos});
 });
 
 // TODO: Add POST route to create new entry
